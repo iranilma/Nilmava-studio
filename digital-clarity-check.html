@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Clarity Check | Nilma Fernandes</title>
+  <meta name="description" content="Get a practical, personalised starting point for your website, systems and online presence.">
+  <style>
+    :root { --ink:#30392d; --paper:#f8f5ef; --olive:#586148; --rose:#e9dcd3; --line:#d9d4c9; --gold:#a38052; --soft:#e7e9df; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.6 Arial,sans-serif; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { font-family:Georgia,serif; font-weight:400; line-height:1.08; }
+    h1 { font-size:clamp(48px,7vw,82px); letter-spacing:-3px; margin-bottom:24px; }
+    h2 { font-size:clamp(34px,4.5vw,57px); letter-spacing:-2px; }
+    h3 { font-size:26px; }
+    a { color:inherit; }
+    .wrap { width:min(1160px,calc(100% - 48px)); margin:auto; }
+    .eyebrow { font-size:10px; letter-spacing:2.3px; text-transform:uppercase; margin-bottom:18px; }
+    .btn { appearance:none; display:inline-flex; align-items:center; justify-content:space-between; gap:28px; border:1px solid var(--ink); padding:15px 21px; background:var(--ink); color:var(--paper); cursor:pointer; text-decoration:none; font:13px Arial,sans-serif; }
+    .btn:hover { background:var(--olive); border-color:var(--olive); }
+    .btn.light { background:var(--rose); border-color:var(--rose); color:var(--ink); }
+    .btn.outline { color:var(--ink); background:transparent; border-color:var(--line); }
+    .btn:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:26px 0; }
+    .brand { font:23px Georgia,serif; line-height:1.1; text-decoration:none; }
+    .brand small { display:block; margin-top:7px; font:9px Arial,sans-serif; letter-spacing:2px; }
+    header a:last-child { font-size:13px; }
+    .hero { padding:70px 0 82px; color:var(--paper); background:var(--ink); }
+    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+    .hero .eyebrow { color:#d2b996; }
+    .hero em, h2 em { color:#d8bfa5; }
+    .intro { max-width:590px; color:#e3e4d9; font-size:18px; }
+    .hero-card { padding:35px; color:var(--ink); background:var(--paper); box-shadow:12px 14px 0 #a3805244; transform:rotate(2deg); }
+    .hero-card h3 { margin:8px 0 15px; }
+    .checks { padding:0; margin:23px 0 0; list-style:none; border-top:1px solid var(--line); }
+    .checks li { padding:11px 0; border-bottom:1px solid var(--line); font-size:14px; }
+    .checks li::before { content:'✓'; color:var(--olive); padding-right:10px; }
+    .section { padding:88px 0; }
+    .soft { background:var(--soft); }
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:70px; }
+    .statement { font:27px/1.45 Georgia,serif; }
+    .muted { color:#5f6659; }
+    .steps, .areas { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:42px; }
+    .step, .area { border-top:1px solid var(--gold); padding-top:21px; }
+    .number { display:block; color:#82623e; font-size:10px; letter-spacing:1.5px; margin-bottom:16px; }
+    .step p, .area p { font-size:14px; }
+    .area { padding:25px; border:1px solid var(--line); background:var(--paper); }
+    .area h3 { font-size:23px; margin-bottom:12px; }
+    .tool { padding:75px 0 90px; }
+    .tool-head { max-width:680px; margin-bottom:40px; }
+    form { display:grid; grid-template-columns:repeat(2,1fr); gap:23px 26px; }
+    .full { grid-column:1/-1; }
+    label { display:block; margin-bottom:8px; font-size:12px; font-weight:bold; }
+    label span { color:#62695d; font-weight:normal; }
+    input,select,textarea { width:100%; padding:14px; border:1px solid #b7bbac; color:var(--ink); border-radius:0; background:var(--paper); font:15px Arial,sans-serif; }
+    textarea { min-height:116px; resize:vertical; }
+    .choice-group { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+    .choice { position:relative; display:block; margin:0; cursor:pointer; }
+    .choice input { position:absolute; opacity:0; pointer-events:none; }
+    .choice span { display:block; min-height:58px; padding:12px; border:1px solid var(--line); color:var(--ink); font-size:13px; }
+    .choice input:checked + span { border-color:var(--olive); background:#e7e9df; box-shadow:inset 0 0 0 1px var(--olive); }
+    .privacy { margin:0; color:#62695d; font-size:12px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .result { display:none; margin-top:60px; border-top:1px solid var(--ink); padding-top:55px; }
+    .result.show { display:block; }
+    .result-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:36px; }
+    .score-total { flex:0 0 auto; width:132px; height:132px; display:grid; place-items:center; border:1px solid var(--gold); border-radius:50%; color:var(--olive); font:45px Georgia,serif; }
+    .score-total small { display:block; margin-top:-40px; font:10px Arial,sans-serif; letter-spacing:1px; text-transform:uppercase; }
+    .score-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .score { padding:18px; border:1px solid var(--line); background:var(--paper); }
+    .score strong { display:block; color:var(--olive); font:31px Georgia,serif; }
+    .score span { font-size:12px; }
+    .score b { display:block; margin:7px 0 4px; color:#82623e; font-size:10px; letter-spacing:1.1px; text-transform:uppercase; }
+    .score p { margin:0; color:#5f6659; font-size:12px; line-height:1.45; }
+    .score-note { max-width:720px; margin:0 0 28px; color:#5f6659; font-size:14px; }
+    .roadmap { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:42px 0; }
+    .roadmap article { padding:24px; background:var(--paper); border-top:2px solid var(--gold); }
+    .roadmap h3 { font-size:23px; }
+    .roadmap ul { margin:0; padding-left:19px; font-size:14px; }
+    .roadmap li { margin:7px 0; }
+    .next { padding:32px; color:var(--paper); background:var(--ink); }
+    .next h3 { margin-bottom:10px; }
+    footer { padding:35px 0; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:11px; }
+    @media print { @page { margin:14mm; } body { background:#fff; font-size:11pt; } body > * { display:none !important; } main { display:block !important; } main > * { display:none !important; } #check { display:block !important; width:100% !important; padding:0 !important; } #check > :not(#result) { display:none !important; } #result { display:block !important; margin:0 !important; padding:0 !important; border:0 !important; } #result .next { color:#30392d; background:#f3f1eb; } #result .actions { display:none !important; } .score-grid { grid-template-columns:repeat(4,1fr); } .roadmap { gap:12px; } .roadmap article { padding:14px; } }
+    @media (max-width:760px) { .wrap { width:min(100% - 40px,1160px); } .hero { padding:52px 0 65px; } .hero-grid,.split { grid-template-columns:1fr; gap:38px; } .steps,.areas,.roadmap { grid-template-columns:1fr; gap:22px; } form { grid-template-columns:1fr; } .choice-group { grid-template-columns:1fr; } .result-head { align-items:start; flex-direction:column; } .score-grid { grid-template-columns:repeat(2,1fr); } .section,.tool { padding:65px 0; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="/">Nilma Fernandes<small>DIGITAL BUSINESS SUPPORT &amp; WEB CARE</small></a>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <a href="/" style="font-size:13px; font-weight:600; text-decoration:none;">← Back to Home</a>
+      <a class="btn light" style="padding:10px 18px; font-size:12px;" href="mailto:nilmavadesign@gmail.com?subject=Digital%20Clarity%20Check">Email Nilma ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">A clearer digital starting point</p>
+          <h1>See what is<br><em>worth fixing first.</em></h1>
+          <p class="intro">Answer a few practical questions about your business and receive a tailored Digital Clarity Snapshot — with useful priorities for your website, systems and online presence.</p>
+          <a class="btn light" href="#check">Start your free check <span aria-hidden="true">↘</span></a>
+        </div>
+        <aside class="hero-card" aria-label="What the Digital Clarity Check covers">
+          <p class="eyebrow">Your snapshot includes</p>
+          <h3>A practical place to begin.</h3>
+          <ul class="checks">
+            <li>Website clarity and conversion</li>
+            <li>Customer journey and follow-up</li>
+            <li>Digital systems and everyday admin</li>
+            <li>Local visibility and Google Business Profile</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div><p class="eyebrow">How it works</p><h2>A useful view of<br><em>what needs attention.</em></h2></div>
+        <div><p class="statement">You do not need to know which platform, process or page is creating friction. Start with what you are trying to achieve.</p><p class="muted">This check turns your answers into a focused starting point. It is designed to help you decide what to fix now, what to improve next and where support could make the biggest difference.</p></div>
+      </div>
+      <div class="wrap steps">
+        <article class="step"><span class="number">01 / SHARE</span><h3>Your current picture</h3><p>Tell us about your business, goals and the tools or tasks that feel difficult right now.</p></article>
+        <article class="step"><span class="number">02 / SEE</span><h3>Your clarity snapshot</h3><p>Receive a personalised score and practical recommendations instantly on this page.</p></article>
+        <article class="step"><span class="number">03 / ACT</span><h3>Your next move</h3><p>Download your plan, work through it independently or ask Nilma for tailored support.</p></article>
+      </div>
+    </section>
+
+    <section class="soft section">
+      <div class="wrap"><p class="eyebrow">Four areas, one connected business</p><h2>What your check considers.</h2>
+        <div class="areas">
+          <article class="area"><h3>Website</h3><p>Whether visitors can quickly understand your offer and take the right next step.</p></article>
+          <article class="area"><h3>Customer journey</h3><p>How people enquire, book, buy and hear from you after taking action.</p></article>
+          <article class="area"><h3>Systems</h3><p>The tools, repeat tasks and behind-the-scenes processes supporting your work.</p></article>
+          <article class="area"><h3>Online presence</h3><p>How visible and consistent your business feels across your website and local profile.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool wrap" id="check">
+      <div class="tool-head"><p class="eyebrow">Your Digital Clarity Check</p><h2>Let’s find your<br><em>most useful next step.</em></h2><p class="muted">This takes around two minutes. No account, email address or login is required.</p></div>
+      <form id="clarity-form">
+        <div><label for="business">Business name <span>(optional)</span></label><input id="business" name="business" autocomplete="organization" placeholder="Your business name"></div>
+        <div><label for="site">Website link <span>(optional)</span></label><input id="site" name="site" type="url" placeholder="https://yourwebsite.com"></div>
+        <fieldset class="full" style="border:0;padding:0;margin:0"><legend><label>How does your business work?</label></legend><div class="choice-group"><label class="choice"><input type="radio" name="businessType" value="online" checked><span>Mostly online</span></label><label class="choice"><input type="radio" name="businessType" value="local"><span>Local or in-person</span></label><label class="choice"><input type="radio" name="businessType" value="hybrid"><span>A mix of both</span></label></div></fieldset>
+        <div><label for="goal">What matters most right now?</label><select id="goal" name="goal"><option value="leads">More enquiries or bookings</option><option value="clarity">A clearer website and offer</option><option value="systems">Less manual admin</option><option value="visibility">Better local or online visibility</option><option value="launch">Preparing a new service or offer</option></select></div>
+        <div><label for="websiteState">How does your website feel today?</label><select id="websiteState" name="websiteState"><option value="clear">Clear and up to date</option><option value="some">Useful, but needs some attention</option><option value="unclear">Outdated, unclear or incomplete</option><option value="none">I do not have one yet</option></select></div>
+        <div><label for="followup">What happens after someone gets in touch?</label><select id="followup" name="followup"><option value="smooth">A clear, consistent follow-up process</option><option value="manual">I do it manually each time</option><option value="unclear">It depends / I am not sure</option><option value="none">There is no consistent process</option></select></div>
+        <div><label for="systems">How do your tools and admin feel?</label><select id="systems" name="systems"><option value="connected">Simple and mostly connected</option><option value="manual">Too much is manual</option><option value="messy">Tools feel disconnected or confusing</option><option value="starting">I am starting from scratch</option></select></div>
+        <div class="full"><label for="presence">For local businesses: how is your Google Business Profile?</label><select id="presence" name="presence"><option value="na">Not relevant to my business</option><option value="good">Updated and actively managed</option><option value="basic">It exists but needs attention</option><option value="missing">I do not have one / I am not sure</option></select></div>
+        <div class="full"><label for="challenge">What feels most frustrating right now? <span>(optional)</span></label><textarea id="challenge" name="challenge" placeholder="For example: I get enquiries but forget to follow up, my website no longer reflects my work, or I am spending too much time on repetitive admin."></textarea></div>
+        <div class="full actions"><button class="btn" type="submit">Create my clarity snapshot <span aria-hidden="true">↗</span></button><p class="privacy">Your answers stay in your browser. This check does not save or send your information.</p></div>
+      </form>
+
+      <section class="result" id="result" aria-live="polite" tabindex="-1">
+        <div class="result-head"><div><p class="eyebrow">Your Digital Clarity Snapshot</p><h2 id="result-title">Your next steps, made clearer.</h2><p class="muted" id="result-summary"></p></div><div class="score-total"><span id="total-score">72</span><small>out of 100</small></div></div>
+        <p class="score-note">These are not performance grades. They show which areas are most ready to support your goal and which ones are creating the most friction right now. Lower scores become the first priorities in your plan.</p>
+        <div class="score-grid" id="score-grid"></div>
+        <div class="roadmap">
+          <article><span class="number">NOW / START HERE</span><h3>Fix first</h3><ul id="now-list"></ul></article>
+          <article><span class="number">NEXT / BUILD ON IT</span><h3>Improve next</h3><ul id="next-list"></ul></article>
+          <article><span class="number">LATER / KEEP IN VIEW</span><h3>Consider later</h3><ul id="later-list"></ul></article>
+        </div>
+        <div class="next"><h3>Want a review of your actual website and systems?</h3><p>This snapshot is a useful starting point based on your answers. A personalised Website &amp; Systems Clarity Audit reviews your actual website, customer journey, current tools and — if relevant — your Google Business Profile, with specific recommendations.</p><div class="actions"><a class="btn light" id="email-link" href="mailto:nilmavadesign@gmail.com">Email Nilma about an audit ↗</a><button class="btn outline" id="download" type="button">Save my snapshot as PDF</button></div></div>
+      </section>
+    </section>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> Nilma Fernandes</span><span>Digital Clarity Check · No account required</span></footer>
+  <script>
+    const scoreMap={clear:88,some:62,unclear:35,none:20,smooth:88,manual:56,unclearFollow:42,noneFollow:24,connected:86,manualSystem:57,messy:35,starting:28,good:88,basic:55,missing:28,na:70};
+    const byId=id=>document.getElementById(id);
+    const list=(id,items)=>byId(id).innerHTML=items.map(item=>`<li>${item}</li>`).join('');
+    const priority={
+      website:{clear:'Review key pages quarterly so your message stays current.',some:'Refresh the page that matters most to enquiries or bookings.',unclear:'Clarify your offer, audience and one primary call to action on your homepage.',none:'Create a simple website or landing page with your offer, proof and contact path.'},
+      followup:{smooth:'Check that confirmations and follow-up messages still reflect your current offer.',manual:'Map the steps after an enquiry and save templates for repeat replies.',unclear:'Choose one clear path from enquiry to booking, sale or next conversation.',none:'Set up a simple acknowledgement and a defined next step for every enquiry.'},
+      systems:{connected:'Document the process that already works so it stays easy to manage.',manual:'Identify one recurring task that could be simplified, templated or automated.',messy:'List your current tools and remove duplication before adding anything new.',starting:'Choose the smallest set of tools needed for your current offer.'},
+      presence:{good:'Keep your profile current with new photos, services and review responses.',basic:'Update core business details, services, photos and the main website link.',missing:'Create or claim your profile, then complete every essential business detail.',na:'Make sure your core website and contact details are consistent wherever clients find you.'}
+    };
+    function result(){
+      const form=new FormData(byId('clarity-form'));
+      const business=form.get('business')||'your business'; const type=form.get('businessType'); const goal=form.get('goal');
+      const website=form.get('websiteState'); const followupRaw=form.get('followup'); const systems=form.get('systems'); const presence=form.get('presence');
+      const followup=followupRaw==='unclear'?'unclearFollow':followupRaw==='none'?'noneFollow':followupRaw;
+      const areas=[
+        {name:'Website',score:scoreMap[website],action:priority.website[website],meaning:'How clearly your website supports understanding and action.'},
+        {name:'Customer journey',score:scoreMap[followup],action:priority.followup[followup],meaning:'How consistently people move from enquiry to a useful next step.'},
+        {name:'Systems',score:scoreMap[systems],action:priority.systems[systems],meaning:'How manageable the tools and repeat tasks behind your business feel.'},
+        {name:'Online presence',score:scoreMap[presence],action:priority.presence[presence],meaning:'How easy it is for people to find accurate, trustworthy business information.'}
+      ];
+      const scores=areas.map(area=>[area.name,area.score]);
+      const total=Math.round(areas.reduce((sum,area)=>sum+area.score,0)/areas.length);
+      byId('total-score').textContent=total;
+      byId('result-title').textContent=`A clearer digital next step for ${business}.`;
+      const goalText={leads:'creating a clearer route from interest to enquiry',clarity:'making your offer and next step easier to understand',systems:'reducing manual work behind the scenes',visibility:'helping the right people find and trust your business',launch:'bringing the essential pieces of your next offer together'}[goal];
+      byId('result-summary').textContent=`Your priorities point towards ${goalText}. Focus on one useful improvement at a time rather than changing everything at once.`;
+      byId('score-grid').innerHTML=areas.map(area=>{const label=area.score>=80?'Working well':area.score>=60?'Worth improving':'First priority';return `<article class="score"><strong>${area.score}</strong><span>${area.name}</span><b>${label}</b><p>${area.meaning}</p></article>`}).join('');
+      const lowestFirst=[...areas].sort((first,second)=>first.score-second.score);
+      const now=lowestFirst.filter(area=>area.score<70).map(area=>area.action);
+      if(!now.length) now.push('Choose one area to improve intentionally, rather than making changes everywhere at once.');
+      list('now-list',now.slice(0,3));
+      const next=['Write down the customer journey from first visit to paid work.','Choose one measurable sign of progress, such as enquiries, bookings or time saved.',goal==='visibility'?'Make business details and contact information consistent across your online presence.':'Check that your website and confirmation messages use the same clear language.'];
+      const later=['Review your priorities again after four to six weeks.','Consider a personalised audit before investing in new tools or a larger rebuild.'];
+      list('next-list',next); list('later-list',later);
+      const emailSubject=encodeURIComponent('I would like a Website & Systems Clarity Audit');
+      const emailBody=encodeURIComponent(`Hello Nilma,\n\nI completed the Digital Clarity Check and would like to discuss a personalised audit.\n\nBusiness: ${business}\nWebsite: ${form.get('site')||'Not provided'}\nBusiness type: ${type}\nMain goal: ${goal}\nMy score: ${total}/100\n\nWhat feels frustrating: ${form.get('challenge')||'Not provided'}\n`);
+      byId('email-link').href=`mailto:nilmavadesign@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+      byId('result').classList.add('show'); byId('result').focus(); byId('result').scrollIntoView({behavior:'smooth',block:'start'});
+      window.snapshot={business,goal,total,scores,now,next,later};
+    }
+    byId('clarity-form').addEventListener('submit',event=>{event.preventDefault();result();});
+    byId('download').addEventListener('click',()=>{const s=window.snapshot;if(!s)return;const originalTitle=document.title;document.title=`Digital Clarity Snapshot - ${s.business}`;window.print();setTimeout(()=>document.title=originalTitle,1000);});
+    byId('year').textContent=new Date().getFullYear();
+  </script>
+<script>(()=>{const pages={Privacy:'<h2>Privacy Policy</h2><p>Last updated: 4 November 2026</p><p>Nilma Fernandes uses information you choose to share by email only to reply to you, discuss potential work and deliver agreed services.</p><h3>Digital Clarity Check</h3><p>Your answers are processed in your browser to create the result. They are not stored or sent automatically. If you choose to email a result, you choose what to send.</p><h3>Website data</h3><p>This website currently has no account, contact form, newsletter, advertising or analytics tool. The hosting provider may process standard technical server information needed to deliver the site.</p><h3>Your choices</h3><p>For access, correction or deletion requests, email <a href="mailto:nilmavadesign@gmail.com">nilmavadesign@gmail.com</a>.</p>',Terms:'<h2>Terms of Use</h2><p>Last updated: 4 November 2026</p><p>This website provides general information about Nilma Fernandes’ digital business support services. It is not a binding offer, legal advice, financial advice or a guarantee of business results.</p><h3>Digital Clarity Check</h3><p>The check is an educational starting point based on the answers provided. It is not a full technical, SEO or systems audit. Projects, deliverables, fees and timelines are agreed separately in writing.</p><h3>External links</h3><p>Links to third-party websites are provided as portfolio references. Nilma is not responsible for their content, availability or privacy practices.</p>',Cookies:'<h2>Cookie Policy</h2><p>Last updated: 4 November 2026</p><p>This static website is intended to run without advertising, analytics or marketing cookies. No non-essential cookie tool is included in the current files.</p><h3>Future tools</h3><p>If analytics, advertising pixels, embedded content, booking tools or chat widgets are added, this policy must be updated. Where required, consent must be obtained before non-essential cookies are set.</p><h3>Questions</h3><p>Email <a href="mailto:nilmavadesign@gmail.com">nilmavadesign@gmail.com</a>.</p>'};document.head.insertAdjacentHTML('beforeend','<style>dialog{width:min(680px,calc(100% - 40px));max-height:80vh;border:0;padding:0;background:#f8f5ef;color:#30392d;box-shadow:0 25px 80px #0008}dialog::backdrop{background:#30392dbb}.legal{padding:38px}.legal h2,.legal h3{font-family:Georgia,serif;font-weight:400;line-height:1.1}.legal h2{margin:0 0 12px;font-size:42px}.legal h3{margin:30px 0 8px;font-size:25px}.legal p{font:15px/1.65 Arial,sans-serif}.legal button{float:right;border:0;background:transparent;color:#30392d;font-size:25px;cursor:pointer}</style>');document.querySelector('footer').insertAdjacentHTML('beforeend','<span><a href="#privacy" data-legal="Privacy">Privacy</a> · <a href="#terms" data-legal="Terms">Terms</a> · <a href="#cookies" data-legal="Cookies">Cookies</a></span><dialog id="legal-modal"><div class="legal"><button aria-label="Close" onclick="this.closest(\'dialog\').close()">×</button><div id="legal-content"></div></div></dialog>');const modal=document.querySelector('#legal-modal'),content=document.querySelector('#legal-content');document.querySelectorAll('[data-legal]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();content.innerHTML=pages[link.dataset.legal];modal.showModal()}));modal.addEventListener('click',event=>{if(event.target===modal)modal.close()})})()</script>
+</body>
+</html>
