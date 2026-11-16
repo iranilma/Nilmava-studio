@@ -912,7 +912,7 @@ function initContactForm() {
       : `<span style="color:var(--text-sage);">Securing direct transmission to Nilma Fernandes...</span>`;
 
     const payload = {
-      access_key: "a7556596-3d23-41f8-bf7a-5aba3156cea9",
+      access_key: "c6327061-3b64-4170-a680-bfc155bc47ee",
       name: name,
       email: email,
       project_type: type,
@@ -938,11 +938,11 @@ function initContactForm() {
         statusMsg.innerHTML = currentLang === 'pt'
           ? `<div style="background: rgba(185,255,57,0.08); border: 1px solid var(--accent-lime); border-radius: 6px; padding: 0.85rem; color: var(--accent-lime); line-height: 1.45; text-align: left;">
               <strong style="display:block; margin-bottom: 4px; font-size: 0.95rem;">✓ Proposta enviada com sucesso!</strong>
-              Nilma recebeu sua mensagem diretamente no e-mail e responderá em até 24–48 horas para <em>${email}</em>.
+              Nilma recebeu sua mensagem e responderá em até 24–48 horas.
             </div>`
           : `<div style="background: rgba(185,255,57,0.08); border: 1px solid var(--accent-lime); border-radius: 6px; padding: 0.85rem; color: var(--accent-lime); line-height: 1.45; text-align: left;">
               <strong style="display:block; margin-bottom: 4px; font-size: 0.95rem;">✓ Inquiry Transmitted Successfully!</strong>
-              Nilma has received your project details and will review your scope within 24–48 hours at <em>${email}</em>.
+              Nilma has received your project details and will review your scope within 24–48 hours.
             </div>`;
         form.reset();
       } else {
