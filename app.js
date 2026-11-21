@@ -13,6 +13,7 @@ const i18n = {
     nav_brand_tag: "STUDIO 2026",
     nav_capabilities: "Capabilities",
     nav_experiences: "Experiences",
+    nav_showreel: "Showreel",
     nav_work: "Selected Work",
     nav_tech: "Tech Stack",
     nav_process: "Process",
@@ -111,47 +112,134 @@ const i18n = {
     pwa_prompt_placeholder: "Type your observation here... (Data persists offline)",
     pwa_save_btn: "Store in Local Offline Cache",
 
-    // Section 03: Selected Work
+    // Section 03: Studio Showreel & Selected Work
+    showreel_eyebrow: "THE STUDIO IN MOTION · 2026 REEL",
+    showreel_heading: "Ideas. Systems. Experiences. Built to work.",
+    showreel_subhead: "A closer look at the digital worlds, interactive tools and business systems taking shape inside Nilma VA Studio.",
+    showreel_badge: "STUDIO REEL",
+    showreel_scope_text: "15 Platforms · PWAs · Dashboards · Products",
+
     work_eyebrow: "PORTFOLIO & CASE STUDIES",
     work_heading: "Ideas designed, built and brought to life.",
     work_subhead: "A curated collection of proprietary platforms, client websites, interactive web apps, and digital product suites.",
     
-    filter_all: "All Works (7)",
+    filter_all: "All Works (15)",
     filter_apps: "Web Apps & PWAs",
+    filter_dashboards: "Dashboards & Systems",
     filter_products: "Digital Products",
-    filter_clients: "Client Websites",
-    filter_tools: "Interactive Tools",
+    filter_educational: "Education & Coaching",
+    filter_clients: "Client & Editorial",
 
-    proj_hub_title: "Nilma Business Hub",
-    proj_hub_type: "PROPRIETARY PLATFORM · MULTI-BRAND OS",
-    proj_hub_desc: "Unified multi-brand business operating system with strategic planning, automation diagrams, content tools and financial analytics.",
-    
-    proj_harmonious_title: "The Harmonious Home™",
-    proj_harmonious_type: "DIGITAL PRODUCT SUITE · STOREFRONT",
-    proj_harmonious_desc: "Home organization digital product suite, printable planners, cleaning checklists and digital storefront.",
+    // Project 01: Nilma Business Dashboard
+    badge_hub: "MULTI-BRAND OS · CENTRAL COMMAND",
+    proj_hub_title: "Nilma Business Dashboard",
+    proj_hub_type: "BUSINESS INTELLIGENCE / MULTI-BRAND OS",
+    proj_hub_desc: "A unified central command dashboard organizing multi-brand operations across 6 workspaces, active projects, launch countdowns, revenue tracking and automated workflows.",
+    btn_discuss_hub: "Discuss Custom Hub ↗",
 
+    // Project 02: Phoenix Menopause Reset PWA
+    badge_menopause: "PROGRESSIVE WEB APP",
     proj_menopause_title: "Phoenix Menopause Reset™",
     proj_menopause_type: "PROGRESSIVE WEB APP (PWA)",
     proj_menopause_desc: "Interactive 21-day guided PWA with reflection prompts, tracking and offline reader support.",
 
-    proj_clarity_title: "Digital Clarity Check",
-    proj_clarity_type: "INTERACTIVE ASSESSMENT TOOL",
-    proj_clarity_desc: "Interactive digital maturity assessment with a personalized action roadmap.",
+    // Project 03: 365 Days With Jesus (New 01)
+    badge_jesus365: "DIGITAL DEVOTIONAL SUITE",
+    proj_jesus365_title: "365 Days With Jesus",
+    proj_jesus365_type: "DIGITAL PRODUCTS / EDUCATIONAL EXPERIENCES",
+    proj_jesus365_desc: "A complete digital devotional experience designed to bring daily Scripture, reflection, prayer and faith-based encouragement into everyday life.",
+    btn_inquire_edition: "Discuss Devotional Project ↗",
 
-    proj_boutique_title: "Little Moments Boutique",
-    proj_boutique_type: "FAITH-BASED DIGITAL STATIONERY",
-    proj_boutique_desc: "Faith-based educational digital stationery and printable products.",
+    // Project 04: Ciência da Papinha (New 02)
+    badge_papinha: "EDUCATIONAL PLATFORM",
+    proj_papinha_title: "Ciência da Papinha",
+    proj_papinha_type: "EDUCATIONAL WEBSITES / DIGITAL PRODUCTS",
+    proj_papinha_desc: "An educational digital experience focused on introducing solid foods to babies with scientific knowledge, practical guidance and a welcoming learning environment.",
+    btn_inquire_platform: "Discuss EdTech Platform ↗",
 
+    // Project 05: Nilma VA Real Estate (New 05 - Featured)
+    badge_realestate_crm: "ENTERPRISE BI · CRM OPERATING SUITE",
+    proj_realestate_crm_title: "Nilma VA Real Estate",
+    proj_realestate_crm_type: "BUSINESS INTELLIGENCE / CRM / BUSINESS SYSTEMS",
+    proj_realestate_crm_desc: "A business operating dashboard designed to organize real estate operations, including leads, buyers, sellers, properties, listings, financial performance and sales pipelines.",
+    btn_request_crm: "Request Custom Business System ↗",
+
+    // Project 06: Meu Portal Sagrado (New 03)
+    badge_sagrado: "PERSONAL DIGITAL SANCTUARY",
+    proj_sagrado_title: "Meu Portal Sagrado",
+    proj_sagrado_type: "INTERACTIVE DASHBOARDS / PERSONAL DIGITAL SYSTEMS",
+    proj_sagrado_desc: "A personal digital sanctuary bringing together daily practices, guided reflections, journaling, study resources and progress tracking.",
+    btn_inquire_sanctuary: "Discuss Personal Dashboard ↗",
+
+    // Project 07: Phoenix Menopause Reset Dashboard (New 07)
+    badge_phoenix_reset_dash: "21-DAY GUIDED DASHBOARD",
+    proj_phoenix_reset_dash_title: "Phoenix Menopause Reset Dashboard",
+    proj_phoenix_reset_dash_type: "PROGRESSIVE WEB APPLICATIONS / DIGITAL WELLNESS",
+    proj_phoenix_reset_dash_desc: "An interactive 21-day guided experience designed around three phases: Reset, Rebuild and Rise.",
+    btn_inquire_pwa_system: "Discuss Wellness PWA ↗",
+
+    // Project 08: Thai Quest (New 08 - Featured)
+    badge_thaiquest: "EDTECH APPLICATION · LANGUAGE LEARNING",
+    proj_thaiquest_title: "Thai Quest",
+    proj_thaiquest_type: "EDUCATIONAL APPLICATIONS / LANGUAGE LEARNING",
+    proj_thaiquest_desc: "An interactive Thai-language learning application designed around practical lessons, Thai script, romanization, daily learning and progress tracking.",
+    btn_inquire_edtech: "Discuss EdTech Application ↗",
+
+    // Project 09: Phoenix Menopause Method™ (New 06)
+    badge_phoenix_method: "COACHING PLATFORM",
+    proj_phoenix_method_title: "Phoenix Menopause Method™",
+    proj_phoenix_method_type: "COACHING PLATFORMS / BRAND EXPERIENCES",
+    proj_phoenix_method_desc: "A premium coaching website presenting a personalized six-week private coaching experience for women navigating menopause.",
+    btn_inquire_coaching: "Inquire Coaching Site ↗",
+
+    // Project 02: The Harmonious Home™
+    badge_harmonious: "FENG SHUI DASHBOARD · INTERACTIVE PDF",
+    proj_harmonious_title: "The Harmonious Home™",
+    proj_harmonious_type: "INTERACTIVE DASHBOARDS / DIGITAL PUBLICATION SUITES",
+    proj_harmonious_desc: "A comprehensive Feng Shui sanctuary dashboard featuring the 7-Day Home Harmony Journey, interactive fillable PDF workbooks, Bagua energy atlas, and habit streak tracking.",
+    btn_inquire_storefront: "Discuss PDF Dashboard ↗",
+
+    // Project 10: Nilma Phuket (New 04)
+    badge_phuket: "EDITORIAL PLATFORM",
+    proj_phuket_title: "Nilma Phuket",
+    proj_phuket_type: "BRAND WEBSITES / LIFESTYLE PUBLISHING",
+    proj_phuket_desc: "A lifestyle editorial platform combining fitness, travel and everyday life in Phuket, with a distinctive tropical visual identity.",
+    btn_inquire_editorial: "Discuss Editorial Site ↗",
+
+    // Project 11: Spicy & Wild™
+    badge_spicywild: "ADULT FETISH DIGITAL BOUTIQUE",
+    proj_spicywild_title: "Spicy & Wild™",
+    proj_spicywild_type: "DIGITAL PRODUCTS / PRIVATE MEMBERS BOUTIQUE",
+    proj_spicywild_desc: "A private digital salon creating high-design workbooks, provocative card decks, intimacy rituals, and somatic educational guides for sovereign, consenting adults.",
+    btn_inquire_boutique: "Inquire Digital Boutique ↗",
+
+    // Project 12: Little Moments Kids Boutique
+    badge_boutique: "KIDS DIGITAL PRINTABLES · E-COMMERCE",
+    proj_boutique_title: "Little Moments Kids Boutique",
+    proj_boutique_type: "EDUCATIONAL DIGITAL PRODUCTS / KIDS STORE",
+    proj_boutique_desc: "Educational, creative and fun digital printables to support children's development, featuring learning resources, activity books, daily routines and Christian kids printables.",
+    btn_inquire_kids_store: "Discuss Kids Storefront ↗",
+
+    // Project 13: CM Top Estate
+    badge_cm_topestate: "LUXURY REAL ESTATE PORTAL",
     proj_realestate_title: "CM Top Estate",
     proj_realestate_type: "INTERNATIONAL REAL ESTATE WEBSITE",
     proj_realestate_desc: "International real estate website with property filtering and inquiry workflows.",
 
+    // Project 14: Ocean View Treasure
+    badge_ocean_view: "HOSPITALITY WEB PLATFORM",
     proj_resort_title: "Ocean View Treasure",
     proj_resort_type: "BOUTIQUE BEACHFRONT RESORT",
     proj_resort_desc: "Boutique beachfront resort website with room galleries and direct reservation pathways.",
 
-    btn_view_details: "Explore Architecture",
+    // Project 15: Digital Clarity Check
+    badge_clarity: "INTERACTIVE ASSESSMENT TOOL",
+    proj_clarity_title: "Digital Clarity Check",
+    proj_clarity_type: "INTERACTIVE ASSESSMENT TOOL",
+    proj_clarity_desc: "Interactive digital maturity assessment with a personalized action roadmap.",
+    btn_launch_assessment: "Launch Assessment ↗",
     btn_launch_live: "Launch Live Experience ↗",
+    btn_view_details: "Explore Architecture",
 
     // Section 04: Technology & Expertise
     tech_eyebrow: "STACK & INFRASTRUCTURE",
@@ -229,6 +317,7 @@ const i18n = {
     nav_brand_tag: "ESTÚDIO 2026",
     nav_capabilities: "Capacidades",
     nav_experiences: "Experiências",
+    nav_showreel: "Showreel",
     nav_work: "Trabalhos",
     nav_tech: "Tecnologias",
     nav_process: "Metodologia",
@@ -327,47 +416,134 @@ const i18n = {
     pwa_prompt_placeholder: "Escreva suas anotações aqui... (Salvo mesmo sem internet)",
     pwa_save_btn: "Salvar no Cache Local",
 
-    // Section 03: Selected Work
+    // Section 03: Studio Showreel & Selected Work
+    showreel_eyebrow: "O ESTÚDIO EM MOVIMENTO · REEL 2026",
+    showreel_heading: "Ideias. Sistemas. Experiências. Construídos para funcionar.",
+    showreel_subhead: "Um olhar detalhado sobre os mundos digitais, ferramentas interativas e sistemas operacionais criados no Nilma VA Studio.",
+    showreel_badge: "REEL DO ESTÚDIO",
+    showreel_scope_text: "15 Plataformas · PWAs · Dashboards · Produtos",
+
     work_eyebrow: "PORTFÓLIO & ESTUDOS DE CASO",
     work_heading: "Ideias concebidas, construídas e trazidas à vida.",
     work_subhead: "Uma seleção de plataformas proprietárias, sites de clientes, aplicações web interativas e suítes de produtos digitais.",
     
-    filter_all: "Todos os Trabalhos (7)",
+    filter_all: "Todos os Trabalhos (15)",
     filter_apps: "Web Apps & PWAs",
+    filter_dashboards: "Painéis & Sistemas",
     filter_products: "Produtos Digitais",
-    filter_clients: "Sites de Clientes",
-    filter_tools: "Ferramentas Interativas",
+    filter_educational: "Educação & Mentoria",
+    filter_clients: "Clientes & Editorial",
 
-    proj_hub_title: "Nilma Business Hub",
-    proj_hub_type: "PLATAFORMA PROPRIETÁRIA · OS MULTI-MARCAS",
-    proj_hub_desc: "Sistema operacional de negócios multi-marcas com planejamento estratégico, diagramas de automação n8n/Make, copiloto de conteúdo e métricas financeiras.",
-    
-    proj_harmonious_title: "The Harmonious Home™",
-    proj_harmonious_type: "SUÍTE DE PRODUTOS DIGITAIS · E-COMMERCE",
-    proj_harmonious_desc: "Suíte de produtos para organização da casa, planners imprimíveis em alta resolução, checklists de limpeza e vitrine virtual.",
+    // Project 01: Nilma Business Dashboard
+    badge_hub: "OS MULTI-MARCAS · COMANDO CENTRAL",
+    proj_hub_title: "Nilma Business Dashboard",
+    proj_hub_type: "BUSINESS INTELLIGENCE / OS MULTI-MARCAS",
+    proj_hub_desc: "Painel de comando central unificado organizando operações multi-marcas em 6 workspaces, projetos ativos, lançamentos, métricas financeiras e automações.",
+    btn_discuss_hub: "Solicitar Hub Sob Medida ↗",
 
+    // Project 02: Phoenix Menopause Reset PWA
+    badge_menopause: "APLICAÇÃO WEB PROGRESSIVA (PWA)",
     proj_menopause_title: "Phoenix Menopause Reset™",
     proj_menopause_type: "APLICAÇÃO WEB PROGRESSIVA (PWA)",
     proj_menopause_desc: "PWA interativo com jornada guiada de 21 dias, registros diários de reflexão, acompanhamento e suporte a leitura offline.",
 
-    proj_clarity_title: "Digital Clarity Check",
-    proj_clarity_type: "FERRAMENTA DE DIAGNÓSTICO INTERATIVO",
-    proj_clarity_desc: "Diagnóstico interativo de maturidade digital com cálculo em tempo real e plano de ação personalizado.",
+    // Project 03: 365 Days With Jesus (New 01)
+    badge_jesus365: "SUÍTE DEVOCIONAL DIGITAL",
+    proj_jesus365_title: "365 Days With Jesus",
+    proj_jesus365_type: "PRODUTOS DIGITAIS / EXPERIÊNCIAS EDUCATIVAS",
+    proj_jesus365_desc: "Uma experiência devocional digital completa, projetada para trazer passagens bíblicas diárias, reflexão, oração e encorajamento para o dia a dia.",
+    btn_inquire_edition: "Conversar Sobre Projeto Devocional ↗",
 
-    proj_boutique_title: "Little Moments Boutique",
-    proj_boutique_type: "PAPELARIA DIGITAL COM BASE EM VALORES",
-    proj_boutique_desc: "Papelaria digital educativa e produtos imprimíveis baseados em valores espirituais e familiares.",
+    // Project 04: Ciência da Papinha (New 02)
+    badge_papinha: "PLATAFORMA EDUCATIVA",
+    proj_papinha_title: "Ciência da Papinha",
+    proj_papinha_type: "WEBSITES EDUCATIVOS / PRODUTOS DIGITAIS",
+    proj_papinha_desc: "Uma experiência digital educativa focada na introdução alimentar de bebês com base científica, orientações práticas e um ambiente de aprendizado acolhedor.",
+    btn_inquire_platform: "Conversar Sobre Plataforma EdTech ↗",
 
+    // Project 05: Nilma VA Real Estate (New 05 - Featured)
+    badge_realestate_crm: "ENTERPRISE BI · SISTEMA OPERACIONAL & CRM",
+    proj_realestate_crm_title: "Nilma VA Real Estate",
+    proj_realestate_crm_type: "BUSINESS INTELLIGENCE / CRM / SISTEMAS DE GESTÃO",
+    proj_realestate_crm_desc: "Um painel operacional de negócios projetado para organizar operações imobiliárias, incluindo leads, compradores, vendedores, propriedades, portfólio, desempenho financeiro e funis de vendas.",
+    btn_request_crm: "Solicitar Sistema Sob Medida ↗",
+
+    // Project 06: Meu Portal Sagrado (New 03)
+    badge_sagrado: "SANTUÁRIO DIGITAL PESSOAL",
+    proj_sagrado_title: "Meu Portal Sagrado",
+    proj_sagrado_type: "DASHBOARDS INTERATIVOS / SISTEMAS PESSOAIS",
+    proj_sagrado_desc: "Um santuário digital pessoal que reúne práticas diárias, reflexões guiadas, diário pessoal, biblioteca de estudos e acompanhamento de evolução.",
+    btn_inquire_sanctuary: "Conversar Sobre Dashboard Pessoal ↗",
+
+    // Project 07: Phoenix Menopause Reset Dashboard (New 07)
+    badge_phoenix_reset_dash: "PAINEL GUIADO DE 21 DIAS",
+    proj_phoenix_reset_dash_title: "Phoenix Menopause Reset Dashboard",
+    proj_phoenix_reset_dash_type: "PROGRESSIVE WEB APPS / BEM-ESTAR DIGITAL",
+    proj_phoenix_reset_dash_desc: "Uma experiência guiada interativa de 21 dias estruturada em três fases transformadoras: Reset, Rebuild e Rise.",
+    btn_inquire_pwa_system: "Conversar Sobre PWA de Bem-Estar ↗",
+
+    // Project 08: Thai Quest (New 08 - Featured)
+    badge_thaiquest: "APLICAÇÃO EDTECH · APRENDIZADO DE TAILANDÊS",
+    proj_thaiquest_title: "Thai Quest",
+    proj_thaiquest_type: "APLICAÇÕES EDUCATIVAS / APRENDIZADO DE IDIOMAS",
+    proj_thaiquest_desc: "Uma aplicação interativa para aprendizado da língua tailandesa com lições práticas, escrita tailandesa, romanização, rotina diária e métricas de progresso.",
+    btn_inquire_edtech: "Conversar Sobre Aplicação de Idiomas ↗",
+
+    // Project 09: Phoenix Menopause Method™ (New 06)
+    badge_phoenix_method: "PLATAFORMA DE MENTORIA",
+    proj_phoenix_method_title: "Phoenix Menopause Method™",
+    proj_phoenix_method_type: "PLATAFORMAS DE MENTORIA / EXPERIÊNCIAS DE MARCA",
+    proj_phoenix_method_desc: "Um website de mentoria premium apresentando uma experiência personalizada de seis semanas para mulheres durante a transição da menopausa.",
+    btn_inquire_coaching: "Consultar Mentoria & Plataforma ↗",
+
+    // Project 10: The Harmonious Home™
+    badge_harmonious: "DASHBOARD FENG SHUI · PDF INTERATIVO",
+    proj_harmonious_title: "The Harmonious Home™",
+    proj_harmonious_type: "DASHBOARDS INTERATIVOS / PUBLICAÇÕES DIGITAIS",
+    proj_harmonious_desc: "Dashboard de santuário Feng Shui com a Jornada de 7 Dias para Harmonia no Lar, cadernos de exercícios interativos em PDF preenchível, atlas de energia Bagua e acompanhamento de hábitos.",
+    btn_inquire_storefront: "Conversar Sobre Dashboard PDF ↗",
+
+    // Project 11: Nilma Phuket (New 04)
+    badge_phuket: "PLATAFORMA EDITORIAL",
+    proj_phuket_title: "Nilma Phuket",
+    proj_phuket_type: "SITES DE MARCA / PUBLICAÇÃO EDITORIAL",
+    proj_phuket_desc: "Uma plataforma editorial de lifestyle que une fitness, viagens e vida cotidiana em Phuket, com uma identidade visual tropical marcante.",
+    btn_inquire_editorial: "Conversar Sobre Site Editorial ↗",
+
+    // Project 12: Spicy & Wild™
+    badge_spicywild: "BOUTIQUE DIGITAL ADULTA / FETISH",
+    proj_spicywild_title: "Spicy & Wild™",
+    proj_spicywild_type: "PRODUTOS DIGITAIS / SALÃO EXCLUSIVO DE MEMBROS",
+    proj_spicywild_desc: "Um salão digital privado com workbooks de alto padrão visual, decks provocativos de cartas, rituais de intimidade e guias somáticos educativos para adultos conscientes e soberanos.",
+    btn_inquire_boutique: "Consultar Boutique Digital ↗",
+
+    // Project 13: Little Moments Kids Boutique
+    badge_boutique: "IMPRIMÍVEIS INFANTIS · E-COMMERCE",
+    proj_boutique_title: "Little Moments Kids Boutique",
+    proj_boutique_type: "PRODUTOS DIGITAIS EDUCATIVOS / LOJA INFANTIL",
+    proj_boutique_desc: "Recursos digitais imprimíveis educativos, criativos e divertidos para o desenvolvimento infantil, com materiais de alfabetização, rotinas, planners e imprimíveis cristãos.",
+    btn_inquire_kids_store: "Consultar Loja Infantil ↗",
+
+    // Project 14: CM Top Estate
+    badge_cm_topestate: "PORTAL IMOBILIÁRIO DE LUXO",
     proj_realestate_title: "CM Top Estate",
     proj_realestate_type: "PORTAL IMOBILIÁRIO INTERNACIONAL",
     proj_realestate_desc: "Website imobiliário internacional com filtros avançados de busca de propriedades e captação de clientes.",
 
+    // Project 15: Ocean View Treasure
+    badge_ocean_view: "PLATAFORMA DE HOSPITALIDADE",
     proj_resort_title: "Ocean View Treasure",
     proj_resort_type: "RESORT BOUTIQUE BEIRA-MAR",
     proj_resort_desc: "Website para resort boutique à beira-mar com galerias de acomodações e fluxos diretos para reservas.",
 
-    btn_view_details: "Ver Arquitetura",
+    // Project 16: Digital Clarity Check (Interactive Diagnostic)
+    badge_clarity: "FERRAMENTA DE DIAGNÓSTICO INTERATIVO",
+    proj_clarity_title: "Digital Clarity Check",
+    proj_clarity_type: "FERRAMENTA DE DIAGNÓSTICO INTERATIVO",
+    proj_clarity_desc: "Diagnóstico interativo de maturidade digital com cálculo em tempo real e plano de ação personalizado.",
+    btn_launch_assessment: "Iniciar Diagnóstico ↗",
     btn_launch_live: "Acessar Experiência ↗",
+    btn_view_details: "Explorar Arquitetura",
 
     // Section 04: Technology & Expertise
     tech_eyebrow: "INFRAESTRUTURA TÉCNICA",
@@ -699,21 +875,12 @@ function initExperienceSimulator() {
 // ==========================================================================
 const projectDetails = {
   hub: {
-    title: "Nilma Business Hub",
-    badge: "PROPRIETARY PLATFORM · MULTI-BRAND OS",
-    desc_en: "An all-in-one business operating system tailored for solopreneurs and multi-brand operators. Features automated revenue forecasting, live n8n pipeline diagrams, content co-pilot and automated client reporting.",
-    desc_pt: "Sistema operacional completo para negócios digitais e operadores multi-marcas. Conta com projeção financeira automatizada, visualizador de fluxos n8n, copiloto de conteúdo e relatórios integrados.",
-    tech: ["Python", "Supabase", "PostgreSQL", "TailwindCSS", "n8n Webhooks"],
-    action_label: "Request Custom Architecture",
-    action_url: "#contact"
-  },
-  harmonious: {
-    title: "The Harmonious Home™",
-    badge: "DIGITAL PRODUCT SUITE · STOREFRONT",
-    desc_en: "A comprehensive digital organization system designed for modern households. Includes room-by-room printable guides, daily reset frameworks, and high-conversion e-commerce storefront.",
-    desc_pt: "Sistema digital completo de organização doméstica para famílias modernas. Inclui planners imprimíveis de alta resolução, rotinas semanais e vitrine de e-commerce de alta conversão.",
-    tech: ["E-Commerce", "PDF Dynamic Engine", "Elementor Pro", "Stripe Checkout"],
-    action_label: "Inquire About Digital Products",
+    title: "Nilma Business Dashboard",
+    badge: "BUSINESS INTELLIGENCE / MULTI-BRAND OS",
+    desc_en: "A unified central command dashboard organizing multi-brand operations across 6 workspaces, active projects, launch countdowns, revenue tracking, and automated workflows.",
+    desc_pt: "Painel de comando central unificado organizando operações multi-marcas em 6 workspaces, projetos ativos, contagens regressivas de lançamento, controle de receita e fluxos automatizados.",
+    tech: ["Business Intelligence", "Multi-Brand OS", "Workspace Command", "Launch Tracking", "Automated Workflows", "Revenue Telemetry"],
+    action_label: "Discuss Custom Dashboard",
     action_url: "#contact"
   },
   menopause: {
@@ -725,22 +892,103 @@ const projectDetails = {
     action_label: "Launch Live PWA ↗",
     action_url: "https://phoenix21days-menopause-reset.lovable.app/"
   },
-  clarity: {
-    title: "Digital Clarity Check",
-    badge: "INTERACTIVE ASSESSMENT TOOL",
-    desc_en: "A proprietary web assessment tool that audits a business's digital maturity in under 3 minutes, generating an actionable, tailored optimization roadmap.",
-    desc_pt: "Ferramenta proprietária de diagnóstico web que audita a maturidade digital de empresas em menos de 3 minutos, gerando um plano de ação personalizado.",
-    tech: ["JavaScript Engine", "Dynamic Scoring", "Tailwind UI"],
-    action_label: "Run Free Assessment ↗",
-    action_url: "digital-clarity-check.html"
+  jesus365: {
+    title: "365 Days With Jesus",
+    badge: "DIGITAL DEVOTIONAL SUITE",
+    desc_en: "A complete digital devotional experience designed to bring daily Scripture, reflection, prayer and faith-based encouragement into everyday life. Features high-resolution printable PDF editions, daily reflection tracking, and an interactive digital reader.",
+    desc_pt: "Uma experiência devocional digital completa, projetada para trazer passagens bíblicas diárias, reflexão, oração e encorajamento para a rotina diária. Inclui edições em PDF de alta qualidade, registro de reflexões e leitor interativo.",
+    tech: ["Digital Publishing", "PDF Engine", "Responsive Web", "Stripe Checkout", "Daily Devotional"],
+    action_label: "Inquire Devotional Edition",
+    action_url: "#contact"
+  },
+  papinha: {
+    title: "Ciência da Papinha",
+    badge: "EDUCATIONAL PLATFORM",
+    desc_en: "An educational digital experience focused on introducing solid foods to babies with scientific knowledge, practical guidance and a welcoming learning environment. Features course modules, pediatric nutrition guides, and a mobile-friendly learning portal.",
+    desc_pt: "Uma experiência digital educativa focada na introdução alimentar de bebês com fundamentação científica, orientações práticas e ambiente acolhedor. Inclui módulos de curso, guias nutricionais e portal responsivo.",
+    tech: ["Educational Platform", "Course Experience", "Nutrition Guides", "Responsive Mobile UI", "Video Delivery"],
+    action_label: "Discuss EdTech Platform",
+    action_url: "#contact"
+  },
+  realestate_crm: {
+    title: "Nilma VA Real Estate",
+    badge: "BUSINESS INTELLIGENCE / CRM / BUSINESS SYSTEMS",
+    desc_en: "A business operating dashboard designed to organize real estate operations, including leads, buyers, sellers, properties, listings, financial performance and sales pipelines. Provides real-time pipeline visibility, transaction forecasting, and automated client touchpoints.",
+    desc_pt: "Um painel operacional de negócios projetado para organizar operações imobiliárias, incluindo leads, compradores, vendedores, propriedades, portfólio, desempenho financeiro e funis de vendas com visibilidade em tempo real.",
+    tech: ["Business Intelligence", "Real Estate CRM", "Listing Management", "Sales Pipeline", "Financial Analytics", "Automated Workflow"],
+    action_label: "Request Custom Business System",
+    action_url: "#contact"
+  },
+  sagrado: {
+    title: "Meu Portal Sagrado",
+    badge: "INTERACTIVE DASHBOARDS / PERSONAL DIGITAL SYSTEMS",
+    desc_en: "A personal digital sanctuary bringing together daily practices, guided reflections, journaling, study resources and progress tracking. Engineered for mindful daily routines, reflection archives, and offline habit persistence.",
+    desc_pt: "Um santuário digital pessoal que reúne práticas diárias, reflexões guiadas, diário pessoal, biblioteca de estudos e acompanhamento de evolução pessoal com armazenamento offline confiável.",
+    tech: ["Personal Sanctuary", "Daily Reflections", "Journaling Engine", "Study Library", "Habit Tracking", "PWA Architecture"],
+    action_label: "Inquire Sanctuary App",
+    action_url: "#contact"
+  },
+  phoenix_reset_dash: {
+    title: "Phoenix Menopause Reset Dashboard",
+    badge: "PROGRESSIVE WEB APPLICATIONS / DIGITAL WELLNESS",
+    desc_en: "An interactive 21-day guided experience designed around three transformative phases: Reset, Rebuild and Rise. Features interactive daily prompts, activity logs, progress tracking, and mobile-first offline capability.",
+    desc_pt: "Uma experiência guiada interativa de 21 dias estruturada em três fases transformadoras: Reset, Rebuild e Rise. Conta com questionários diários interativos, registro de atividades e funcionamento offline.",
+    tech: ["Interactive Dashboard", "3-Phase Framework", "Guided Activities", "Progress Tracking", "Mobile PWA", "Local Storage"],
+    action_label: "Launch Live PWA ↗",
+    action_url: "https://phoenix21days-menopause-reset.lovable.app/"
+  },
+  thaiquest: {
+    title: "Thai Quest",
+    badge: "EDUCATIONAL APPLICATIONS / LANGUAGE LEARNING",
+    desc_en: "An interactive Thai-language learning application designed around practical lessons, Thai script, romanization, daily learning and progress tracking. Bridges tonal pronunciation, character recognition drills, and conversational travel scenarios.",
+    desc_pt: "Uma aplicação interativa para aprendizado da língua tailandesa com lições práticas, escrita tailandesa, romanização, rotina diária e métricas de progresso voltada a viajantes e residentes.",
+    tech: ["Learning Dashboard", "Interactive Lessons", "Thai Script Engine", "Romanization", "Progress Tracking", "Mobile Interface"],
+    action_label: "Discuss EdTech Application",
+    action_url: "#contact"
+  },
+  phoenix_method: {
+    title: "Phoenix Menopause Method™",
+    badge: "COACHING PLATFORMS / BRAND EXPERIENCES",
+    desc_en: "A premium coaching website presenting a personalized six-week private coaching experience for women navigating menopause. Features compassionate brand positioning, program syllabus breakdown, and private application intake pathways.",
+    desc_pt: "Um website de mentoria premium apresentando uma experiência personalizada de seis semanas para mulheres durante a transição da menopausa com posicionamento de marca exclusivo e funil de qualificação.",
+    tech: ["Brand Experience", "Coaching Landing Page", "Program Presentation", "Application Journey", "Intake Funnel"],
+    action_label: "Inquire Coaching Site",
+    action_url: "#contact"
+  },
+  harmonious: {
+    title: "The Harmonious Home™",
+    badge: "INTERACTIVE DASHBOARDS / DIGITAL PUBLICATION SUITES",
+    desc_en: "A comprehensive Feng Shui sanctuary dashboard featuring the 7-Day Home Harmony Journey, interactive fillable PDF workbooks, Bagua energy atlas, and daily ritual habit tracking.",
+    desc_pt: "Dashboard de santuário Feng Shui com a Jornada de 7 Dias para Harmonia no Lar, cadernos de exercícios interativos em PDF preenchível, atlas de energia Bagua e acompanhamento de hábitos.",
+    tech: ["Feng Shui Dashboard", "Fillable PDF Engine", "7-Day Reset Journey", "Bagua Energy Atlas", "Interactive Navigation", "Streak Tracking"],
+    action_label: "Discuss PDF Dashboard",
+    action_url: "#contact"
+  },
+  phuket: {
+    title: "Nilma Phuket",
+    badge: "BRAND WEBSITES / LIFESTYLE PUBLISHING",
+    desc_en: "A lifestyle editorial platform combining fitness, travel and everyday life in Phuket, with a distinctive tropical visual identity. Features high-impact photography layouts, fitness diaries, and island lifestyle journals.",
+    desc_pt: "Uma plataforma editorial de lifestyle que une fitness, viagens e vida cotidiana em Phuket, com uma identidade visual tropical marcante, ensaios fotográficos e crônicas da ilha.",
+    tech: ["Editorial Website", "Lifestyle Storytelling", "Fitness & Travel", "Tropical UI", "Responsive Design", "Fast CDN"],
+    action_label: "Discuss Editorial Site",
+    action_url: "#contact"
+  },
+  spicywild: {
+    title: "Spicy & Wild™",
+    badge: "DIGITAL PRODUCTS / PRIVATE MEMBERS BOUTIQUE",
+    desc_en: "A private digital salon creating high-design workbooks, provocative card decks, intimacy rituals, and somatic educational guides for sovereign, consenting adults. Built with 100% discreet billing pathways and instantaneous digital fulfillment.",
+    desc_pt: "Um salão digital privado com workbooks de alto padrão visual, decks provocativos de cartas, rituais de intimidade e guias somáticos educativos para adultos conscientes e soberanos, com faturamento discreto e entrega instantânea.",
+    tech: ["Digital Publishing", "Private Members Salon", "Discreet Checkout", "Instant PDF Delivery", "Mobile-Optimized Vault"],
+    action_label: "Inquire Digital Boutique",
+    action_url: "#contact"
   },
   boutique: {
-    title: "Little Moments Boutique",
-    badge: "FAITH-BASED DIGITAL STATIONERY",
-    desc_en: "Digital stationery brand featuring vector devotionals, educational printable stationery, and high-volume automated digital delivery via Shopify.",
-    desc_pt: "Marca de papelaria digital com devocionais em vetor, recursos educativos para impressão e distribuição digital automatizada via Shopify.",
-    tech: ["Shopify Store", "Digital Downloads", "Vector Asset Design"],
-    action_label: "Inquire About Digital Stores",
+    title: "Little Moments Kids Boutique",
+    badge: "EDUCATIONAL DIGITAL PRODUCTS / KIDS STORE",
+    desc_en: "Educational, creative and fun digital printables to support children's development, featuring learning resources, activity books, daily routines and planners, and Christian kids printables with instant home printing.",
+    desc_pt: "Recursos digitais imprimíveis educativos, criativos e divertidos para o desenvolvimento infantil, com materiais de alfabetização, cadernos de atividades, rotinas e planejadores familiares, e imprimíveis cristãos.",
+    tech: ["E-Commerce Storefront", "Printable PDF Suite", "Instant Download Delivery", "Mobile Responsive UI", "Collection Filtering"],
+    action_label: "Discuss Kids Storefront",
     action_url: "#contact"
   },
   realestate: {
@@ -760,6 +1008,15 @@ const projectDetails = {
     tech: ["Hospitality UI", "Direct Booking Gateway", "High-Resolution Media"],
     action_label: "Visit Live Website ↗",
     action_url: "https://oceanviewtreasure.com/"
+  },
+  clarity: {
+    title: "Digital Clarity Check",
+    badge: "INTERACTIVE ASSESSMENT TOOL",
+    desc_en: "A proprietary web assessment tool that audits a business's digital maturity in under 3 minutes, generating an actionable, tailored optimization roadmap.",
+    desc_pt: "Ferramenta proprietária de diagnóstico web que audita a maturidade digital de empresas em menos de 3 minutos, gerando um plano de ação personalizado.",
+    tech: ["JavaScript Engine", "Dynamic Scoring", "Tailwind UI"],
+    action_label: "Run Free Assessment ↗",
+    action_url: "digital-clarity-check.html"
   }
 };
 
@@ -837,6 +1094,21 @@ function initPortfolio() {
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
+  });
+
+  // Enable opening modal by clicking on card media
+  document.querySelectorAll('.project-card').forEach(card => {
+    const modalBtn = card.querySelector('.open-modal-btn');
+    if (!modalBtn) return;
+    const mediaWrap = card.querySelector('.project-media-wrap');
+    if (mediaWrap) {
+      mediaWrap.style.cursor = 'pointer';
+      mediaWrap.addEventListener('click', (e) => {
+        if (!e.target.closest('button, a')) {
+          modalBtn.click();
+        }
+      });
+    }
   });
 
   if (modalClose && modal) {
@@ -972,8 +1244,8 @@ function initContactForm() {
       }
       if (submitBtnText) {
         submitBtnText.textContent = currentLang === 'pt'
-          ? (translations.pt.form_submit_btn || 'Enviar Proposta de Projeto ⚡')
-          : (translations.en.form_submit_btn || 'Send Project Inquiry ⚡');
+          ? (i18n.pt.form_submit_btn || 'Enviar Proposta de Projeto ⚡')
+          : (i18n.en.form_submit_btn || 'Send Project Inquiry ⚡');
       }
     }
   });
@@ -1002,6 +1274,202 @@ function initStudioClock() {
 
   updateTime();
   setInterval(updateTime, 1000);
+}
+
+
+
+// ==========================================================================
+// STUDIO CINEMATIC SHOWREEL ENGINE
+// ==========================================================================
+function initShowreel() {
+  const video = document.getElementById('studioShowreel');
+  const frame = document.getElementById('showreelCinemaFrame');
+  const playOverlay = document.getElementById('showreelPlayOverlay');
+  const playBtn = document.getElementById('reelPlayBtn');
+  const audioBtn = document.getElementById('reelAudioBtn');
+  const fullscreenBtn = document.getElementById('reelFullscreenBtn');
+  const scrubberTrack = document.getElementById('reelScrubberTrack');
+  const scrubberProgress = document.getElementById('reelScrubberProgress');
+  const scrubberThumb = document.getElementById('reelScrubberThumb');
+  const currentTimeEl = document.getElementById('reelCurrentTime');
+  const durationEl = document.getElementById('reelDuration');
+  const wrapper = document.querySelector('.showreel-video-wrapper');
+
+  if (!video) return;
+
+  let isUserPaused = false;
+  let isScrubbing = false;
+
+  function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return '00:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  }
+
+  function updatePlayState(isPlaying) {
+    if (isPlaying) {
+      if (playOverlay) playOverlay.classList.add('is-hidden');
+      if (wrapper) wrapper.classList.add('is-playing');
+      if (playBtn) {
+        const iconPlay = playBtn.querySelector('.icon-play');
+        const iconPause = playBtn.querySelector('.icon-pause');
+        if (iconPlay) iconPlay.style.display = 'none';
+        if (iconPause) iconPause.style.display = 'block';
+      }
+    } else {
+      if (playOverlay) playOverlay.classList.remove('is-hidden');
+      if (wrapper) wrapper.classList.remove('is-playing');
+      if (playBtn) {
+        const iconPlay = playBtn.querySelector('.icon-play');
+        const iconPause = playBtn.querySelector('.icon-pause');
+        if (iconPlay) iconPlay.style.display = 'block';
+        if (iconPause) iconPause.style.display = 'none';
+      }
+    }
+  }
+
+  function togglePlay() {
+    if (video.paused || video.ended) {
+      isUserPaused = false;
+      video.play().then(() => {
+        updatePlayState(true);
+      }).catch(err => {
+        console.warn('Playback prevented:', err);
+      });
+    } else {
+      isUserPaused = true;
+      video.pause();
+      updatePlayState(false);
+    }
+  }
+
+  if (playOverlay) playOverlay.addEventListener('click', togglePlay);
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  video.addEventListener('click', togglePlay);
+
+  video.addEventListener('play', () => updatePlayState(true));
+  video.addEventListener('pause', () => updatePlayState(false));
+
+  video.addEventListener('loadedmetadata', () => {
+    if (durationEl) durationEl.textContent = formatTime(video.duration);
+  });
+
+  video.addEventListener('timeupdate', () => {
+    if (isScrubbing) return;
+    const current = video.currentTime;
+    const duration = video.duration || 15;
+    if (currentTimeEl) currentTimeEl.textContent = formatTime(current);
+    if (durationEl && (!durationEl.textContent || durationEl.textContent === '00:15')) {
+      durationEl.textContent = formatTime(duration);
+    }
+    const percent = (current / duration) * 100;
+    if (scrubberProgress) scrubberProgress.style.width = `${percent}%`;
+    if (scrubberThumb) scrubberThumb.style.left = `${percent}%`;
+  });
+
+  function seekTo(e) {
+    if (!scrubberTrack) return;
+    const rect = scrubberTrack.getBoundingClientRect();
+    const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    const targetTime = pos * (video.duration || 15);
+    video.currentTime = targetTime;
+    if (scrubberProgress) scrubberProgress.style.width = `${pos * 100}%`;
+    if (scrubberThumb) scrubberThumb.style.left = `${pos * 100}%`;
+    if (currentTimeEl) currentTimeEl.textContent = formatTime(targetTime);
+  }
+
+  if (scrubberTrack) {
+    scrubberTrack.addEventListener('click', seekTo);
+
+    scrubberTrack.addEventListener('mousedown', (e) => {
+      isScrubbing = true;
+      seekTo(e);
+      const onMouseMove = (moveEvent) => {
+        seekTo(moveEvent);
+      };
+      const onMouseUp = () => {
+        isScrubbing = false;
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
+      };
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+    });
+
+    scrubberTrack.addEventListener('touchstart', (e) => {
+      isScrubbing = true;
+      if (e.touches && e.touches[0]) seekTo(e.touches[0]);
+    }, { passive: true });
+
+    scrubberTrack.addEventListener('touchmove', (e) => {
+      if (isScrubbing && e.touches && e.touches[0]) {
+        seekTo(e.touches[0]);
+      }
+    }, { passive: true });
+
+    scrubberTrack.addEventListener('touchend', () => {
+      isScrubbing = false;
+    });
+  }
+
+  if (audioBtn) {
+    audioBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      const iconMuted = audioBtn.querySelector('.icon-muted');
+      const iconUnmuted = audioBtn.querySelector('.icon-unmuted');
+      if (video.muted) {
+        if (iconMuted) iconMuted.style.display = 'block';
+        if (iconUnmuted) iconUnmuted.style.display = 'none';
+        audioBtn.setAttribute('aria-label', currentLang === 'pt' ? 'Ativar som' : 'Unmute audio');
+      } else {
+        if (iconMuted) iconMuted.style.display = 'none';
+        if (iconUnmuted) iconUnmuted.style.display = 'block';
+        audioBtn.setAttribute('aria-label', currentLang === 'pt' ? 'Silenciar som' : 'Mute audio');
+      }
+    });
+  }
+
+  if (fullscreenBtn && frame) {
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        if (frame.requestFullscreen) {
+          frame.requestFullscreen();
+        } else if (frame.webkitRequestFullscreen) {
+          frame.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    });
+  }
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+          if (!isUserPaused && video.paused) {
+            video.muted = true;
+            video.play().then(() => {
+              updatePlayState(true);
+            }).catch(() => {});
+          }
+        } else if (!entry.isIntersecting || entry.intersectionRatio < 0.15) {
+          if (!video.paused) {
+            video.pause();
+            updatePlayState(false);
+          }
+        }
+      });
+    }, {
+      threshold: [0.15, 0.35, 0.7]
+    });
+
+    observer.observe(frame || video);
+  }
 }
 
 
@@ -1065,6 +1533,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new FuturisticSculpture('heroCanvas');
 
   // 3. Components
+  initShowreel();
   initExperienceSimulator();
   initPortfolio();
   initContactForm();

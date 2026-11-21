@@ -35,6 +35,7 @@
         <ul class="nav-links" id="navMenu">
           <li><a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a></li>
           <li><a href="#experiences" data-i18n="nav_experiences">Experiences</a></li>
+          <li><a href="#showreel" data-i18n="nav_showreel">Showreel</a></li>
           <li><a href="#work" data-i18n="nav_work">Selected Work</a></li>
           <li><a href="#tech" data-i18n="nav_tech">Tech Stack</a></li>
           <li><a href="#process" data-i18n="nav_process">Process</a></li>
@@ -436,6 +437,109 @@
     </section>
 
     <!-- ========================================================================
+         SECTION: STUDIO SHOWREEL (CINEMATIC SHOWCASE)
+         ======================================================================== -->
+    <section class="section showreel-section" id="showreel">
+      <div class="container">
+        
+        <div class="section-header">
+          <p class="mono-tag section-eyebrow" data-i18n="showreel_eyebrow">THE STUDIO IN MOTION · 2026 REEL</p>
+          <h2 data-i18n="showreel_heading">Ideas. Systems. Experiences. Built to work.</h2>
+          <p class="lead" data-i18n="showreel_subhead">
+            A closer look at the digital worlds, interactive tools and business systems taking shape inside Nilma VA Studio.
+          </p>
+        </div>
+
+        <!-- Cinema Frame Video Player -->
+        <div class="showreel-cinema-frame" id="showreelCinemaFrame">
+          <div class="showreel-ambient-glow" aria-hidden="true"></div>
+          
+          <div class="showreel-top-bar">
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="showreel-bar-title mono-tag">nilma-va-studio-showreel.mp4 · 1080p 60fps</span>
+            <span class="showreel-bar-badge mono-tag" data-i18n="showreel_badge">STUDIO REEL</span>
+          </div>
+
+          <div class="showreel-video-wrapper">
+            <video 
+              id="studioShowreel" 
+              class="showreel-video" 
+              playsinline 
+              muted 
+              loop 
+              preload="metadata"
+              poster="public/videos/showreel-poster.webp">
+              <source src="public/videos/nilma-va-studio-showreel.mp4" type="video/mp4">
+              Your browser does not support high-definition HTML5 video.
+            </video>
+
+            <!-- Big Centered Play/Pause Overlay Button -->
+            <button class="showreel-play-overlay" id="showreelPlayOverlay" aria-label="Play Studio Showreel">
+              <div class="play-pulse-ring" aria-hidden="true"></div>
+              <div class="play-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+              </div>
+            </button>
+
+            <!-- Custom Frosted Glass Player Controls Bar -->
+            <div class="showreel-controls" id="showreelControls" role="toolbar" aria-label="Video Player Controls">
+              <!-- Play / Pause Button -->
+              <button class="reel-ctrl-btn" id="reelPlayBtn" aria-label="Play / Pause">
+                <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+              </button>
+
+              <!-- Scrubber Timeline -->
+              <div class="reel-scrubber-track" id="reelScrubberTrack" role="slider" aria-label="Video scrubber" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                <div class="reel-scrubber-progress" id="reelScrubberProgress"></div>
+                <div class="reel-scrubber-thumb" id="reelScrubberThumb"></div>
+              </div>
+
+              <!-- Timecode -->
+              <div class="reel-timecode mono-tag">
+                <span id="reelCurrentTime">00:00</span> / <span id="reelDuration">00:15</span>
+              </div>
+
+              <!-- Audio Toggle -->
+              <button class="reel-ctrl-btn" id="reelAudioBtn" aria-label="Toggle Sound">
+                <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path><path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              </button>
+
+              <!-- Fullscreen Button -->
+              <button class="reel-ctrl-btn" id="reelFullscreenBtn" aria-label="Toggle Fullscreen">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Showreel Telemetry Footer Strip -->
+          <div class="showreel-caption-strip">
+            <div class="reel-stat-item">
+              <span class="mono-tag" style="color:var(--accent-lime);">RESOLUTION</span>
+              <span class="stat-text">1080p Ultra HD · 60fps</span>
+            </div>
+            <div class="reel-stat-item">
+              <span class="mono-tag" style="color:var(--accent-lime);">SHOWCASE SCOPE</span>
+              <span class="stat-text" data-i18n="showreel_scope_text">15 Platforms · PWAs · Dashboards · Products</span>
+            </div>
+            <div class="reel-stat-item">
+              <span class="mono-tag" style="color:var(--accent-lime);">PRODUCTION</span>
+              <span class="stat-text">Nilma VA Studio Original Reel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
          SECTION 03: SELECTED WORK (EDITORIAL PORTFOLIO)
          ======================================================================== -->
     <section class="section" id="work">
@@ -451,66 +555,41 @@
 
         <!-- Filter Buttons -->
         <div class="portfolio-filter-bar" role="tablist" aria-label="Project Categories">
-          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Works (7)</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Works (15)</button>
           <button class="filter-btn" data-filter="apps" data-i18n="filter_apps">Web Apps &amp; PWAs</button>
+          <button class="filter-btn" data-filter="dashboards" data-i18n="filter_dashboards">Dashboards &amp; Systems</button>
           <button class="filter-btn" data-filter="products" data-i18n="filter_products">Digital Products</button>
-          <button class="filter-btn" data-filter="clients" data-i18n="filter_clients">Client Websites</button>
-          <button class="filter-btn" data-filter="tools" data-i18n="filter_tools">Interactive Tools</button>
+          <button class="filter-btn" data-filter="educational" data-i18n="filter_educational">Education &amp; Coaching</button>
+          <button class="filter-btn" data-filter="clients" data-i18n="filter_clients">Client &amp; Editorial</button>
         </div>
 
         <div class="portfolio-editorial-grid">
 
-          <!-- 1. Nilma Business Hub (Card Half) -->
-          <article class="project-card card-half" data-category="apps tools">
-            <div class="project-media-wrap">
-              <div style="position: absolute; inset: 0; background: radial-gradient(circle at 75% 25%, rgba(185,255,57,0.18), transparent 60%), linear-gradient(135deg, #131a15 0%, #090b0a 100%);">
-                <!-- Browser Chrome & OS Dashboard Mockup -->
-                <div style="position: absolute; top: 1.25rem; left: 1.5rem; right: 1.5rem; bottom: 1rem; border: 1px solid rgba(217,224,213,0.15); border-radius: 8px; background: rgba(14, 18, 16, 0.75); backdrop-filter: blur(8px); padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.6rem; overflow: hidden;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(217,224,213,0.08); padding-bottom: 0.4rem;">
-                    <div style="display: flex; gap: 4px;">
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
-                    </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-sage); letter-spacing: 0.05em;">hub.nilmava.app · proprietary os</span>
-                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); background: rgba(185,255,57,0.1); padding: 2px 6px; border-radius: 3px;">LIVE SYSTEM</span>
-                  </div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.25rem;">
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">REVENUE &amp; TELEMETRY</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: #fff;">$24,850 <span style="font-size:0.65rem; color:var(--accent-lime); font-weight:normal;">+18.4%</span></div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">System Stability: 99.98%</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">AUTOMATION ENGINE</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">14 n8n Webhook Flows</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Real-Time Pipeline Sync</div>
-                    </div>
-                  </div>
-                  <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-sage);">
-                    <span>⚡ Unified Multi-Brand Operating System</span>
-                    <span style="color: var(--accent-lime);">Python &amp; PostgreSQL</span>
-                  </div>
-                </div>
-              </div>
+          <!-- 01. Nilma Business Dashboard (Card Half) -->
+          <article class="project-card card-half" data-category="apps dashboards">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/nilma-business-home-dashboard-mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/nilma-business-home-dashboard-mockup.png" alt="Nilma Business Dashboard Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
               <div class="project-media-overlay">
-                <span class="project-badge-pill">OPERATIONS · 14-MODULE OS</span>
+                <span class="project-badge-pill" data-i18n="badge_hub">MULTI-BRAND OS · CENTRAL COMMAND</span>
               </div>
             </div>
 
             <div class="project-content">
-              <span class="project-category-meta" data-i18n="proj_hub_type">PROPRIETARY PLATFORM · MULTI-BRAND OS</span>
-              <h3 data-i18n="proj_hub_title">Nilma Business Hub</h3>
+              <span class="project-category-meta" data-i18n="proj_hub_type">BUSINESS INTELLIGENCE / MULTI-BRAND OS</span>
+              <h3 data-i18n="proj_hub_title">Nilma Business Dashboard</h3>
               <p class="project-desc" data-i18n="proj_hub_desc">
-                Unified multi-brand business operating system with strategic planning, automation diagrams, content tools and financial analytics.
+                A unified central command dashboard organizing multi-brand operations across 6 workspaces, active projects, launch countdowns, revenue tracking and automated workflows.
               </p>
               
               <div class="project-tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Supabase</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">TailwindCSS</span>
+                <span class="tech-tag">Central Command</span>
+                <span class="tech-tag">Multi-Brand OS</span>
+                <span class="tech-tag">Portfolio Analytics</span>
                 <span class="tech-tag">n8n Automation</span>
+                <span class="tech-tag">PostgreSQL</span>
               </div>
 
               <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
@@ -519,202 +598,444 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
                 <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
-                  <span>Discuss Custom Hub ↗</span>
+                  <span data-i18n="btn_discuss_hub">Discuss Custom Hub ↗</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- 2. Phoenix Menopause Reset (Card Half) -->
-          <article class="project-card card-half" data-category="apps products">
-            <div class="project-media-wrap">
-              <div style="position: absolute; inset: 0; background: radial-gradient(circle at 60% 40%, rgba(185,255,57,0.15), transparent 60%), linear-gradient(135deg, #161c18 0%, #0c100e 100%);">
-                <!-- Browser Chrome & PWA Mockup -->
-                <div style="position: absolute; top: 1.25rem; left: 1.5rem; right: 1.5rem; bottom: 1rem; border: 1px solid rgba(217,224,213,0.15); border-radius: 8px; background: rgba(14, 18, 16, 0.75); backdrop-filter: blur(8px); padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.6rem; overflow: hidden;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(217,224,213,0.08); padding-bottom: 0.4rem;">
-                    <div style="display: flex; gap: 4px;">
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
-                    </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-sage); letter-spacing: 0.05em;">phoenix-reset.app · 21-day companion</span>
-                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); background: rgba(185,255,57,0.1); padding: 2px 6px; border-radius: 3px;">LIVE PWA</span>
-                  </div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.25rem;">
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">WELLBEING ENGINE</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">21-Day Guided Reset</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Daily Reflections &amp; Tracking</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">OFFLINE CACHE</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">Service Workers</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Zero Connection Required</div>
-                    </div>
-                  </div>
-                  <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-sage);">
-                    <span>📱 Progressive Web App Architecture</span>
-                    <span style="color: var(--accent-lime);">Mobile-First UI</span>
-                  </div>
-                </div>
-              </div>
+          <!-- 02. Harmonious Home Feng Shui Interactive Dashboard (Card Half) -->
+          <article class="project-card card-half" data-category="products dashboards">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/the-harmonious-home-feng-shui-dashboard-mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/the-harmonious-home-feng-shui-dashboard-mockup.png" alt="Harmonious Home Feng Shui Dashboard Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
               <div class="project-media-overlay">
-                <span class="project-badge-pill">PROGRESSIVE WEB APP</span>
+                <span class="project-badge-pill" data-i18n="badge_harmonious">FENG SHUI DASHBOARD · INTERACTIVE PDF</span>
               </div>
             </div>
 
             <div class="project-content">
-              <span class="project-category-meta" data-i18n="proj_menopause_type">PROGRESSIVE WEB APP (PWA)</span>
-              <h3 data-i18n="proj_menopause_title">Phoenix Menopause Reset™</h3>
-              <p class="project-desc" data-i18n="proj_menopause_desc">
-                Interactive 21-day guided PWA with reflection prompts, tracking and offline reader support.
-              </p>
-
-              <div class="project-tech-tags">
-                <span class="tech-tag">PWA Engine</span>
-                <span class="tech-tag">Service Workers</span>
-                <span class="tech-tag">Offline Cache</span>
-                <span class="tech-tag">Mobile UI</span>
-              </div>
-
-              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
-                <a href="https://phoenix21days-menopause-reset.lovable.app/" target="_blank" rel="noopener" class="btn-primary" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
-                  <span data-i18n="btn_launch_live">Launch Live PWA ↗</span>
-                </a>
-                <button class="btn-secondary open-modal-btn" data-project="menopause" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
-                  <span data-i18n="btn_view_details">Explore Architecture</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. The Harmonious Home (Card Half) -->
-          <article class="project-card card-half" data-category="products">
-            <div class="project-media-wrap">
-              <div style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 70%, rgba(185,255,57,0.12), transparent 60%), linear-gradient(135deg, #18201b 0%, #0d120f 100%);">
-                <!-- Browser Chrome & Storefront Mockup -->
-                <div style="position: absolute; top: 1.25rem; left: 1.5rem; right: 1.5rem; bottom: 1rem; border: 1px solid rgba(217,224,213,0.15); border-radius: 8px; background: rgba(14, 18, 16, 0.75); backdrop-filter: blur(8px); padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.6rem; overflow: hidden;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(217,224,213,0.08); padding-bottom: 0.4rem;">
-                    <div style="display: flex; gap: 4px;">
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
-                    </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-sage); letter-spacing: 0.05em;">theharmonioushome.shop · digital suite</span>
-                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); background: rgba(185,255,57,0.1); padding: 2px 6px; border-radius: 3px;">STOREFRONT</span>
-                  </div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.25rem;">
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">PRODUCT SUITE</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">Harmonious Home™</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Printables · Guides · Checklists</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">CONVERSION ENGINE</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">Digital Storefront</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Stripe Checkout · PDF Engine</div>
-                    </div>
-                  </div>
-                  <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-sage);">
-                    <span>📦 Automated Digital Product Delivery</span>
-                    <span style="color: var(--accent-lime);">Elementor Pro &amp; Stripe</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-media-overlay">
-                <span class="project-badge-pill">DIGITAL PRODUCT SUITE</span>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <span class="project-category-meta" data-i18n="proj_harmonious_type">DIGITAL PRODUCT SUITE · STOREFRONT</span>
+              <span class="project-category-meta" data-i18n="proj_harmonious_type">INTERACTIVE DASHBOARDS / DIGITAL PUBLICATION SUITES</span>
               <h3 data-i18n="proj_harmonious_title">The Harmonious Home™</h3>
               <p class="project-desc" data-i18n="proj_harmonious_desc">
-                Home organization digital product suite, printable planners, cleaning checklists and digital storefront.
+                A comprehensive Feng Shui sanctuary dashboard featuring the 7-Day Home Harmony Journey, interactive fillable PDF workbooks, Bagua energy atlas, and habit streak tracking.
               </p>
 
               <div class="project-tech-tags">
-                <span class="tech-tag">Digital Storefront</span>
-                <span class="tech-tag">PDF Generation</span>
-                <span class="tech-tag">Elementor Pro</span>
-                <span class="tech-tag">Stripe</span>
+                <span class="tech-tag">Interactive Dashboard</span>
+                <span class="tech-tag">Fillable PDF Library</span>
+                <span class="tech-tag">Bagua Energy Atlas</span>
+                <span class="tech-tag">Habit Streak Tracker</span>
+                <span class="tech-tag">Printable Systems</span>
               </div>
 
               <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
-                <a href="#contact" class="btn-primary" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
-                  <span>Inquire Storefront ↗</span>
-                </a>
-                <button class="btn-secondary open-modal-btn" data-project="harmonious" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                <button class="btn-primary open-modal-btn" data-project="harmonious" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
                   <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_storefront">Discuss PDF Dashboard ↗</span>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 4. Little Moments Boutique (Card Half) -->
-          <article class="project-card card-half" data-category="products">
-            <div class="project-media-wrap">
-              <div style="position: absolute; inset: 0; background: radial-gradient(circle at 40% 60%, rgba(185,255,57,0.12), transparent 60%), linear-gradient(135deg, #1b221d 0%, #0d120f 100%);">
-                <!-- Browser Chrome & Storefront Wireframe -->
-                <div style="position: absolute; top: 1.25rem; left: 1.5rem; right: 1.5rem; bottom: 1rem; border: 1px solid rgba(217,224,213,0.15); border-radius: 8px; background: rgba(14, 18, 16, 0.75); backdrop-filter: blur(8px); padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.6rem; overflow: hidden;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(217,224,213,0.08); padding-bottom: 0.4rem;">
-                    <div style="display: flex; gap: 4px;">
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
-                      <span style="width: 7px; height: 7px; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
-                    </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-sage); letter-spacing: 0.05em;">littlemoments.shop · stationery</span>
-                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); background: rgba(185,255,57,0.1); padding: 2px 6px; border-radius: 3px;">STOREFRONT</span>
-                  </div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.25rem;">
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">DIGITAL ASSETS</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">Faith-Based Stationery</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Printable Planners &amp; Devotionals</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(217,224,213,0.1); border-radius: 6px; padding: 0.6rem;">
-                      <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent-lime); margin-bottom: 2px;">FULFILLMENT</div>
-                      <div style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; color: #fff;">Automated Delivery</div>
-                      <div style="font-size: 0.65rem; color: var(--text-sage); margin-top: 2px;">Instant PDF Dispatch Pipeline</div>
-                    </div>
-                  </div>
-                  <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-sage);">
-                    <span>🛍️ E-Commerce Architecture</span>
-                    <span style="color: var(--accent-lime);">Shopify &amp; Digital Downloads</span>
-                  </div>
-                </div>
-              </div>
+          <!-- 03. 365 Days With Jesus (Card Half - New 01) -->
+          <article class="project-card card-half" data-category="products educational">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/365 Days With Jesus Sales Page.webp" type="image/webp">
+                <img src="public/images/portfolio/365 Days With Jesus Sales Page.png" alt="365 Days With Jesus Devotional Platform Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
               <div class="project-media-overlay">
-                <span class="project-badge-pill">DIGITAL PRODUCT STOREFRONT</span>
+                <span class="project-badge-pill" data-i18n="badge_jesus365">DIGITAL DEVOTIONAL SUITE</span>
               </div>
             </div>
 
             <div class="project-content">
-              <span class="project-category-meta" data-i18n="proj_boutique_type">FAITH-BASED DIGITAL STATIONERY</span>
-              <h3 data-i18n="proj_boutique_title">Little Moments Boutique</h3>
-              <p class="project-desc" data-i18n="proj_boutique_desc">
-                Faith-based educational digital stationery and printable products.
+              <span class="project-category-meta" data-i18n="proj_jesus365_type">DIGITAL PRODUCTS / EDUCATIONAL EXPERIENCES</span>
+              <h3 data-i18n="proj_jesus365_title">365 Days With Jesus</h3>
+              <p class="project-desc" data-i18n="proj_jesus365_desc">
+                A complete digital devotional experience designed to bring daily Scripture, reflection, prayer and faith-based encouragement into everyday life.
               </p>
-
+              
               <div class="project-tech-tags">
-                <span class="tech-tag">Shopify</span>
-                <span class="tech-tag">Digital Assets</span>
-                <span class="tech-tag">Printable PDF</span>
-                <span class="tech-tag">Automated Delivery</span>
+                <span class="tech-tag">Sales Page</span>
+                <span class="tech-tag">Digital Devotional</span>
+                <span class="tech-tag">PDF Edition</span>
+                <span class="tech-tag">Interactive Web</span>
+                <span class="tech-tag">Stripe Checkout</span>
               </div>
 
               <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
-                <a href="#contact" class="btn-primary" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
-                  <span>Inquire Storefront ↗</span>
-                </a>
-                <button class="btn-secondary open-modal-btn" data-project="boutique" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                <button class="btn-primary open-modal-btn" data-project="jesus365" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
                   <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_edition">Discuss Devotional Project ↗</span>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 5. CM Top Estate (Card Half - Client Website) -->
+          <!-- 04. Ciência da Papinha (Card Half - New 02) -->
+          <article class="project-card card-half" data-category="educational products">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/ciencia-da-papinha-mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/ciencia-da-papinha-mockup.png" alt="Ciência da Papinha Website Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_papinha">EDUCATIONAL PLATFORM</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_papinha_type">EDUCATIONAL WEBSITES / DIGITAL PRODUCTS</span>
+              <h3 data-i18n="proj_papinha_title">Ciência da Papinha</h3>
+              <p class="project-desc" data-i18n="proj_papinha_desc">
+                An educational digital experience focused on introducing solid foods to babies with scientific knowledge, practical guidance and a welcoming learning environment.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tech-tag">Course Platform</span>
+                <span class="tech-tag">Educational UI</span>
+                <span class="tech-tag">Pediatric Content</span>
+                <span class="tech-tag">Responsive Mobile</span>
+                <span class="tech-tag">Video Delivery</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="papinha" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_platform">Discuss EdTech Platform ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05. Nilma VA Real Estate (Card Half - New 05) -->
+          <article class="project-card card-half" data-category="dashboards apps">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/Nilma VA Real Estate Dashboard Mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/Nilma VA Real Estate Dashboard Mockup.png" alt="Nilma VA Real Estate Dashboard Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_realestate_crm">ENTERPRISE BI · CRM OPERATING SUITE</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_realestate_crm_type">BUSINESS INTELLIGENCE / CRM / BUSINESS SYSTEMS</span>
+              <h3 data-i18n="proj_realestate_crm_title">Nilma VA Real Estate</h3>
+              <p class="project-desc" data-i18n="proj_realestate_crm_desc">
+                A business operating dashboard designed to organize real estate operations, including leads, buyers, sellers, properties, listings, financial performance and sales pipelines.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Business Intelligence</span>
+                <span class="tech-tag">Real Estate CRM</span>
+                <span class="tech-tag">Listing Management</span>
+                <span class="tech-tag">Sales Pipeline</span>
+                <span class="tech-tag">Financial Analytics</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="realestate_crm" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_request_crm">Request Custom Business System ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06. Thai Quest (Card Half - New 08) -->
+          <article class="project-card card-half" data-category="educational apps">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/Thai Quest Tropical Desk Mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/Thai Quest Tropical Desk Mockup.png" alt="Thai Quest Tropical Desk Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_thaiquest">EDTECH APPLICATION · LANGUAGE LEARNING</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_thaiquest_type">EDUCATIONAL APPLICATIONS / LANGUAGE LEARNING</span>
+              <h3 data-i18n="proj_thaiquest_title">Thai Quest</h3>
+              <p class="project-desc" data-i18n="proj_thaiquest_desc">
+                An interactive Thai-language learning application designed around practical lessons, Thai script, romanization, daily learning and progress tracking.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Learning Dashboard</span>
+                <span class="tech-tag">Interactive Lessons</span>
+                <span class="tech-tag">Thai Script Engine</span>
+                <span class="tech-tag">Romanization</span>
+                <span class="tech-tag">Progress Tracking</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="thaiquest" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_edtech">Discuss EdTech Application ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 07. Meu Portal Sagrado (Card Half - New 03) -->
+          <article class="project-card card-half" data-category="dashboards apps">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/Meu Portal Sagrado_ Wellness Dashboard.webp" type="image/webp">
+                <img src="public/images/portfolio/Meu Portal Sagrado_ Wellness Dashboard.png" alt="Meu Portal Sagrado Wellness Dashboard Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_sagrado">PERSONAL DIGITAL SANCTUARY</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_sagrado_type">INTERACTIVE DASHBOARDS / PERSONAL DIGITAL SYSTEMS</span>
+              <h3 data-i18n="proj_sagrado_title">Meu Portal Sagrado</h3>
+              <p class="project-desc" data-i18n="proj_sagrado_desc">
+                A personal digital sanctuary bringing together daily practices, guided reflections, journaling, study resources and progress tracking.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tech-tag">Personal Dashboard</span>
+                <span class="tech-tag">Daily Reflections</span>
+                <span class="tech-tag">Journaling Engine</span>
+                <span class="tech-tag">Study Library</span>
+                <span class="tech-tag">Habit Tracking</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="sagrado" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_sanctuary">Discuss Personal Dashboard ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 08. Phoenix Menopause Reset Dashboard (Card Half - New 07) -->
+          <article class="project-card card-half" data-category="apps dashboards products">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/Phoenix Menopause Reset Dashboard.webp" type="image/webp">
+                <img src="public/images/portfolio/Phoenix Menopause Reset Dashboard.png" alt="Phoenix Menopause Reset Dashboard Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_phoenix_reset_dash">21-DAY GUIDED DASHBOARD</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_phoenix_reset_dash_type">PROGRESSIVE WEB APPLICATIONS / DIGITAL WELLNESS</span>
+              <h3 data-i18n="proj_phoenix_reset_dash_title">Phoenix Menopause Reset Dashboard</h3>
+              <p class="project-desc" data-i18n="proj_phoenix_reset_dash_desc">
+                An interactive 21-day guided experience designed around three phases: Reset, Rebuild and Rise with reflection prompts, daily tracking and offline PWA reader support.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tech-tag">Interactive Dashboard</span>
+                <span class="tech-tag">3-Phase Framework</span>
+                <span class="tech-tag">Guided Activities</span>
+                <span class="tech-tag">Progress Tracking</span>
+                <span class="tech-tag">Mobile PWA</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="phoenix_reset_dash" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_pwa_system">Discuss Wellness PWA ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 09. Phoenix Menopause Method™ (Card Half - New 06) -->
+          <article class="project-card card-half" data-category="educational clients">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/Phoenix Menopause Coaching Showcase.webp" type="image/webp">
+                <img src="public/images/portfolio/Phoenix Menopause Coaching Showcase.png" alt="Phoenix Menopause Coaching Showcase Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_phoenix_method">COACHING PLATFORM</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_phoenix_method_type">COACHING PLATFORMS / BRAND EXPERIENCES</span>
+              <h3 data-i18n="proj_phoenix_method_title">Phoenix Menopause Method™</h3>
+              <p class="project-desc" data-i18n="proj_phoenix_method_desc">
+                A premium coaching website presenting a personalized six-week private coaching experience for women navigating menopause.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tech-tag">Brand Experience</span>
+                <span class="tech-tag">Coaching Landing Page</span>
+                <span class="tech-tag">Program Presentation</span>
+                <span class="tech-tag">Application Journey</span>
+                <span class="tech-tag">Intake Funnel</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="phoenix_method" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_coaching">Inquire Coaching Site ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+
+
+          <!-- 11. Nilma Phuket (Card Half - New 04) -->
+          <article class="project-card card-half" data-category="clients">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/Nilma Phuket Tropical Blog Showcase.webp" type="image/webp">
+                <img src="public/images/portfolio/Nilma Phuket Tropical Blog Showcase.png" alt="Nilma Phuket Tropical Blog Showcase Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_phuket">EDITORIAL PLATFORM</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_phuket_type">BRAND WEBSITES / LIFESTYLE PUBLISHING</span>
+              <h3 data-i18n="proj_phuket_title">Nilma Phuket</h3>
+              <p class="project-desc" data-i18n="proj_phuket_desc">
+                A lifestyle editorial platform combining fitness, travel and everyday life in Phuket, with a distinctive tropical visual identity.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tech-tag">Editorial Website</span>
+                <span class="tech-tag">Lifestyle Storytelling</span>
+                <span class="tech-tag">Fitness &amp; Travel</span>
+                <span class="tech-tag">Tropical UI</span>
+                <span class="tech-tag">Responsive Design</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="phuket" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_editorial">Discuss Editorial Site ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Spicy & Wild (Card Half - New) -->
+          <article class="project-card card-half" data-category="products">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/spicy-and-wild-boutique-mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/spicy-and-wild-boutique-mockup.png" alt="Spicy &amp; Wild Adult Digital Boutique Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_spicywild">ADULT FETISH DIGITAL BOUTIQUE</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_spicywild_type">DIGITAL PRODUCTS / PRIVATE MEMBERS BOUTIQUE</span>
+              <h3 data-i18n="proj_spicywild_title">Spicy &amp; Wild™</h3>
+              <p class="project-desc" data-i18n="proj_spicywild_desc">
+                A private digital salon creating high-design workbooks, provocative card decks, intimacy rituals, and somatic educational guides for sovereign, consenting adults.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Private Members Salon</span>
+                <span class="tech-tag">Discreet E-Commerce</span>
+                <span class="tech-tag">Instant Download Engine</span>
+                <span class="tech-tag">Card Decks &amp; Guides</span>
+                <span class="tech-tag">Somatic Rituals</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="spicywild" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_boutique">Inquire Digital Boutique ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. Little Moments Kids Boutique (Card Half - New Mockup) -->
+          <article class="project-card card-half" data-category="products educational">
+            <div class="project-media-wrap project-media-showcase">
+              <picture>
+                <source srcset="public/images/portfolio/little-moments-kids-boutique-mockup.webp" type="image/webp">
+                <img src="public/images/portfolio/little-moments-kids-boutique-mockup.png" alt="Little Moments Kids Boutique Mockup" class="project-backdrop-art" loading="lazy">
+              </picture>
+              <div class="project-media-overlay">
+                <span class="project-badge-pill" data-i18n="badge_boutique">KIDS DIGITAL PRINTABLES · E-COMMERCE</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-category-meta" data-i18n="proj_boutique_type">EDUCATIONAL DIGITAL PRODUCTS / KIDS STORE</span>
+              <h3 data-i18n="proj_boutique_title">Little Moments Kids Boutique</h3>
+              <p class="project-desc" data-i18n="proj_boutique_desc">
+                Educational, creative and fun digital printables to support children's development, featuring learning resources, activity books, daily routines and Christian kids printables.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Kids Boutique</span>
+                <span class="tech-tag">Learning Resources</span>
+                <span class="tech-tag">Printable Planners</span>
+                <span class="tech-tag">Automated Delivery</span>
+                <span class="tech-tag">Shopify Architecture</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
+                <button class="btn-primary open-modal-btn" data-project="boutique" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
+                  <span data-i18n="btn_view_details">Explore Architecture</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contact" class="btn-secondary" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
+                  <span data-i18n="btn_inquire_kids_store">Discuss Kids Storefront ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. CM Top Estate (Card Half - Client Website) -->
           <article class="project-card card-half" data-category="clients">
             <div class="project-media-wrap">
               <div style="position: absolute; inset: 0; background: radial-gradient(circle at 75% 25%, rgba(185,255,57,0.15), transparent 60%), linear-gradient(135deg, #141c17 0%, #080b09 100%);">
@@ -748,7 +1069,7 @@
                 </div>
               </div>
               <div class="project-media-overlay">
-                <span class="project-badge-pill">LUXURY REAL ESTATE PORTAL</span>
+                <span class="project-badge-pill" data-i18n="badge_cm_topestate">LUXURY REAL ESTATE PORTAL</span>
               </div>
             </div>
 
@@ -777,7 +1098,7 @@
             </div>
           </article>
 
-          <!-- 6. Ocean View Treasure (Card Half - Client Website) -->
+          <!-- 13. Ocean View Treasure (Card Half - Client Website) -->
           <article class="project-card card-half" data-category="clients">
             <div class="project-media-wrap">
               <div style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 70%, rgba(185,255,57,0.14), transparent 60%), linear-gradient(135deg, #121d20 0%, #070c0e 100%);">
@@ -811,7 +1132,7 @@
                 </div>
               </div>
               <div class="project-media-overlay">
-                <span class="project-badge-pill">HOSPITALITY WEB PLATFORM</span>
+                <span class="project-badge-pill" data-i18n="badge_ocean_view">HOSPITALITY WEB PLATFORM</span>
               </div>
             </div>
 
@@ -840,8 +1161,8 @@
             </div>
           </article>
 
-          <!-- 7. Digital Clarity Check (Card Half - Centered Tool) -->
-          <article class="project-card card-half card-center-row" data-category="tools">
+          <!-- 15. Digital Clarity Check (Card Half - Centered Tool) -->
+          <article class="project-card card-half card-center-row" data-category="apps">
             <div class="project-media-wrap">
               <div style="position: absolute; inset: 0; background: radial-gradient(circle at 60% 40%, rgba(185,255,57,0.14), transparent 60%), linear-gradient(135deg, #18201a 0%, #0a0d0b 100%);">
                 <!-- Browser Chrome & Diagnostic Wireframe -->
@@ -874,7 +1195,7 @@
                 </div>
               </div>
               <div class="project-media-overlay">
-                <span class="project-badge-pill">INTERACTIVE ASSESSMENT TOOL</span>
+                <span class="project-badge-pill" data-i18n="badge_clarity">INTERACTIVE ASSESSMENT TOOL</span>
               </div>
             </div>
 
@@ -894,7 +1215,7 @@
 
               <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto; flex-wrap: wrap;">
                 <a href="digital-clarity-check.html" class="btn-primary" style="font-size: 0.85rem; padding: 0.65rem 1.25rem;">
-                  <span>Launch Assessment ↗</span>
+                  <span data-i18n="btn_launch_assessment">Launch Assessment ↗</span>
                 </a>
                 <button class="btn-secondary open-modal-btn" data-project="clarity" style="font-size: 0.82rem; padding: 0.6rem 1rem;">
                   <span data-i18n="btn_view_details">Explore Architecture</span>
@@ -910,6 +1231,7 @@
 
     <!-- ========================================================================
          SECTION 04: TECHNOLOGY & EXPERTISE (SKILLS MATRIX)
+
          ======================================================================== -->
     <section class="section" id="tech">
       <div class="container">
@@ -1215,6 +1537,8 @@
 
         <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
           <a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a>
+          <a href="#experiences" data-i18n="nav_experiences">Experiences</a>
+          <a href="#showreel" data-i18n="nav_showreel">Showreel</a>
           <a href="#work" data-i18n="nav_work">Selected Work</a>
           <a href="#tech" data-i18n="nav_tech">Tech Stack</a>
           <a href="#about" data-i18n="nav_about">About</a>
